@@ -35,7 +35,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         
         //скаэкшен - объект запускается спрайтом для изменения его структуры или содержимого
-        let moveBackground = SKAction.move(by: CGVector(dx: -1600, dy: 0), duration: 40)
+        let moveBackground = SKAction.move(by: CGVector(dx: -7500, dy: 0), duration: 70)
         
         backgroundNode.run(moveBackground)
         
@@ -45,7 +45,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //! означает что физика точно приссутствует/ что она не нан
         //физбоди - объект который добавляет физическую силу спрайту
-        rabbitNode.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 2))
+        rabbitNode.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 3))
         
     }
     
