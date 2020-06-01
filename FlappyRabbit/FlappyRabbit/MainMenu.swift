@@ -9,5 +9,28 @@
 import SpriteKit
 
 class MainMenu: SKScene {
+       var newGameBtnNode:SKSpriteNode!
+       
+       override func didMove(to view: SKView) {
+        
+           newGameBtnNode = (self.childNode(withName: "newGameBtn") as! SKSpriteNode)
 
+       }
+       
+       override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           let touch = touches.first
+           
+           if let location = touch?.location(in: self) {
+               let nodesArray = self.nodes(at: location)
+               
+               if nodesArray.first?.name == "newGameBtn" {
+                    if let scene = GameScene(fileNamed: "GameScene"){
+                        let transition = SKTransition.crossFade(withDuration: 1)
+                        view?.presentScene(scene, transition: transition)
+                    }
+                   
+               } 
+           }
+       }
+       
 }
